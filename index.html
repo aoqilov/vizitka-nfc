@@ -1,342 +1,662 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Салохиддин Мухитдинов — Председатель, Ассоциация Медицинских Организаций</title>
-<meta name="description" content="Салохиддин Мухитдинов, Председатель, Ассоциация Медицинских Организаций. Контактная карточка.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#F4F7F6;
-    --card:#FFFFFF;
-    --ink:#12312E;
-    --teal:#0F6B66;
-    --teal-deep:#0B4E4A;
-    --muted:#3E5C58;
-    --pulse:#B8433A;
-    --border:#DCE6E3;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Салохиддин Мухитдинов — Председатель, Ассоциация Медицинских Организаций
+    </title>
+    <meta
+      name="description"
+      content="Салохиддин Мухитдинов, Председатель, Ассоциация Медицинских Организаций. Контактная карточка."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f4f7f6;
+        --card: #ffffff;
+        --ink: #12312e;
+        --teal: #0f6b66;
+        --teal-deep: #0b4e4a;
+        --muted: #3e5c58;
+        --pulse: #b8433a;
+        --pulse-bright: #ff8a6b;
+        --border: #dce6e3;
+      }
 
-  *{ box-sizing:border-box; }
+      * {
+        box-sizing: border-box;
+      }
 
-  html{ font-size:16px; }
+      html {
+        font-size: 16px;
+      }
 
-  body{
-    margin:0;
-    min-height:100dvh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:2rem 1.1rem;
-    background-color:var(--bg);
-    background-image:
-      linear-gradient(rgba(15,107,102,0.055) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(15,107,102,0.055) 1px, transparent 1px);
-    background-size:22px 22px;
-    font-family:'IBM Plex Sans', system-ui, sans-serif;
-    color:var(--ink);
-  }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.1rem;
+        background-color: var(--bg);
+        background-image:
+          radial-gradient(
+            ellipse 480px 360px at 50% 38%,
+            rgba(15, 107, 102, 0.09),
+            transparent 70%
+          ),
+          linear-gradient(rgba(15, 107, 102, 0.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(15, 107, 102, 0.055) 1px, transparent 1px);
+        background-size:
+          100% 100%,
+          22px 22px,
+          22px 22px;
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        color: var(--ink);
+      }
 
-  .card{
-    position:relative;
-    width:100%;
-    max-width:380px;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:6px;
-    padding:2rem 1.75rem 1.9rem;
-    box-shadow:
-      0 1px 0 var(--border),
-      0 24px 40px -28px rgba(11,78,74,0.45);
-    opacity:0;
-    transform:translateY(14px) scale(.98);
-    animation:cardIn .6s cubic-bezier(.16,.8,.24,1) forwards;
-    animation-delay:.05s;
-  }
+      .card {
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 2rem 1.75rem 1.9rem;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.7),
+          0 1px 0 var(--border),
+          0 10px 18px -14px rgba(11, 78, 74, 0.35),
+          0 30px 46px -26px rgba(11, 78, 74, 0.4);
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+        animation: cardIn 0.6s cubic-bezier(0.16, 0.8, 0.24, 1) forwards;
+        animation-delay: 0.05s;
+      }
 
-  .lang-toggle{
-    position:absolute;
-    top:1.1rem;
-    right:1.1rem;
-    background:none;
-    border:1px solid var(--border);
-    border-radius:4px;
-    color:var(--teal);
-    font-family:inherit;
-    font-weight:600;
-    font-size:.72rem;
-    letter-spacing:.03em;
-    padding:.32rem .55rem;
-    cursor:pointer;
-    transition:border-color .15s ease, background .15s ease;
-  }
-  .lang-toggle:hover{ border-color:var(--teal); background:var(--bg); }
-  .lang-toggle:focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
+      .lang-toggle {
+        position: absolute;
+        top: 1.1rem;
+        right: 1.1rem;
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        color: var(--teal);
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        padding: 0.32rem 0.55rem;
+        cursor: pointer;
+        transition:
+          border-color 0.15s ease,
+          background 0.15s ease,
+          transform 0.1s ease;
+      }
+      .lang-toggle:hover {
+        border-color: var(--teal);
+        background: var(--bg);
+      }
+      .lang-toggle:active {
+        transform: scale(0.94);
+      }
+      .lang-toggle:focus-visible {
+        outline: 2px solid var(--teal);
+        outline-offset: 2px;
+      }
 
-  @keyframes cardIn{ to{ opacity:1; transform:none; } }
+      @keyframes cardIn {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes revealUp {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
 
-  .seal{
-    position:relative;
-    width:58px;
-    height:58px;
-    margin-bottom:1.4rem;
-  }
-  .seal svg{ position:absolute; inset:0; width:100%; height:100%; }
-  .seal-mono{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:'Source Serif 4', Georgia, serif;
-    font-weight:700;
-    font-size:1.05rem;
-    color:var(--teal-deep);
-    letter-spacing:0.01em;
-  }
+      .seal {
+        position: relative;
+        width: 58px;
+        height: 58px;
+        margin-bottom: 1.4rem;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 32% 28%,
+          #ffffff,
+          #eaf3f2 55%,
+          #dcedeb 100%
+        );
+        box-shadow:
+          inset 0 1px 2px rgba(255, 255, 255, 0.9),
+          inset 0 -3px 5px rgba(11, 78, 74, 0.16),
+          0 3px 6px -1px rgba(11, 78, 74, 0.2);
+        opacity: 0;
+        animation: revealUp 0.5s ease-out forwards;
+        animation-delay: 0.2s;
+      }
+      .seal svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .seal-mono {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Source Serif 4", Georgia, serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--teal-deep);
+        letter-spacing: 0.01em;
+      }
 
-  h1.name{
-    margin:0 0 .95rem;
-    font-family:'Source Serif 4', Georgia, serif;
-    font-weight:700;
-    font-size:clamp(1.85rem, 7vw, 2.5rem);
-    line-height:1.06;
-    letter-spacing:-0.01em;
-    color:var(--ink);
-  }
+      h1.name {
+        margin: 0 0 0.95rem;
+        font-family: "Source Serif 4", Georgia, serif;
+        font-weight: 700;
+        font-size: clamp(1.85rem, 7vw, 2.5rem);
+        line-height: 1.06;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+        opacity: 0;
+        animation: revealUp 0.5s ease-out forwards;
+        animation-delay: 0.3s;
+      }
 
-  .role{
-    margin:0 0 .15rem;
-    font-weight:600;
-    font-size:clamp(1rem, 3.6vw, 1.12rem);
-    color:var(--teal);
-  }
+      .role {
+        margin: 0 0 0.15rem;
+        font-weight: 600;
+        font-size: clamp(1rem, 3.6vw, 1.12rem);
+        color: var(--teal);
+        opacity: 0;
+        animation: revealUp 0.5s ease-out forwards;
+        animation-delay: 0.38s;
+      }
 
-  .org{
-    margin:0;
-    font-weight:400;
-    font-size:clamp(.9rem, 3vw, .98rem);
-    color:var(--muted);
-    max-width:28ch;
-    line-height:1.4;
-  }
+      .org {
+        margin: 0;
+        font-weight: 400;
+        font-size: clamp(0.9rem, 3vw, 0.98rem);
+        color: var(--muted);
+        max-width: 28ch;
+        line-height: 1.4;
+        opacity: 0;
+        animation: revealUp 0.5s ease-out forwards;
+        animation-delay: 0.44s;
+      }
 
-  .pulse{ margin:1.6rem 0; }
-  .pulse svg{ display:block; width:100%; height:auto; }
-  .pulse path{
-    fill:none;
-    stroke:var(--pulse);
-    stroke-width:2.4;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-    stroke-dasharray:1;
-    stroke-dashoffset:1;
-    animation:draw 1.3s ease-out forwards;
-    animation-delay:.55s;
-  }
-  @keyframes draw{ to{ stroke-dashoffset:0; } }
+      .pulse {
+        margin: 1.6rem 0;
+        padding: 0.85rem 0.75rem;
+        border-radius: 6px;
+        background-color: #0a3c39;
+        background-image:
+          linear-gradient(rgba(160, 232, 205, 0.16) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(160, 232, 205, 0.16) 1px,
+            transparent 1px
+          ),
+          linear-gradient(rgba(160, 232, 205, 0.3) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(160, 232, 205, 0.3) 1px, transparent 1px),
+          linear-gradient(160deg, #0c5551 0%, #0a3c39 65%, #082e2b 100%);
+        background-size:
+          8px 8px,
+          8px 8px,
+          40px 40px,
+          40px 40px,
+          100% 100%;
+        box-shadow:
+          inset 0 2px 6px rgba(0, 0, 0, 0.4),
+          inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+          0 1px 0 rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        animation: revealUp 0.5s ease-out forwards;
+        animation-delay: 0.52s;
+      }
+      .pulse svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+      .pulse path {
+        fill: none;
+        stroke: var(--pulse-bright);
+        stroke-width: 2.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+        filter: drop-shadow(0 0 3px rgba(255, 138, 107, 0.5));
+        animation: draw 1.1s ease-out forwards;
+        animation-delay: 1s;
+      }
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
 
-  .contact{
-    list-style:none;
-    margin:0 0 1.7rem;
-    padding:0;
-    display:flex;
-    flex-direction:column;
-    gap:.7rem;
-  }
+      .pulse-dot {
+        fill: var(--pulse-bright);
+        filter: drop-shadow(0 0 4px rgba(255, 138, 107, 0.85));
+        opacity: 0;
+        animation: dotIn 0.01s linear forwards;
+        animation-delay: 2.05s;
+      }
+      @keyframes dotIn {
+        to {
+          opacity: 1;
+        }
+      }
 
-  .contact a{
-    display:flex;
-    align-items:center;
-    gap:.7rem;
-    color:var(--ink);
-    text-decoration:none;
-    font-size:.96rem;
-    padding:.15rem 0;
-    border-radius:3px;
-  }
-  .contact a:hover span{ color:var(--teal); }
-  .contact a:focus-visible{ outline:2px solid var(--teal); outline-offset:3px; }
-  .contact svg{ flex:none; width:19px; height:19px; color:var(--teal); }
-  .contact span{ word-break:break-word; transition:color .15s ease; }
+      .contact {
+        list-style: none;
+        margin: 0 0 1.7rem;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
 
-  .save-btn{
-    width:100%;
-    border:none;
-    border-radius:5px;
-    background:var(--teal);
-    color:#fff;
-    font-family:inherit;
-    font-weight:600;
-    font-size:.96rem;
-    padding:.85rem 1rem;
-    cursor:pointer;
-    transition:background .15s ease;
-  }
-  .save-btn:hover{ background:var(--teal-deep); }
-  .save-btn:focus-visible{ outline:2px solid var(--teal-deep); outline-offset:3px; }
+      .contact li {
+        opacity: 0;
+        animation: revealUp 0.45s ease-out forwards;
+      }
+      .contact li:nth-child(1) {
+        animation-delay: 0.8s;
+      }
+      .contact li:nth-child(2) {
+        animation-delay: 0.88s;
+      }
+      .contact li:nth-child(3) {
+        animation-delay: 0.96s;
+      }
+      .contact li:nth-child(4) {
+        animation-delay: 1.04s;
+      }
 
-  @media (min-width:640px){
-    .card{ max-width:420px; padding:2.3rem 2.1rem 2.1rem; }
-  }
+      .contact a {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 0.96rem;
+        padding: 0.15rem 0;
+        border-radius: 3px;
+        transition: transform 0.15s ease;
+      }
+      .contact a:hover {
+        transform: translateX(3px);
+      }
+      .contact a:hover span {
+        color: var(--teal);
+      }
+      .contact a:focus-visible {
+        outline: 2px solid var(--teal);
+        outline-offset: 3px;
+      }
+      .contact svg {
+        flex: none;
+        width: 19px;
+        height: 19px;
+        color: var(--teal);
+      }
+      .contact span {
+        word-break: break-word;
+        transition: color 0.15s ease;
+      }
 
-  @media (prefers-reduced-motion:reduce){
-    .card{ animation:none; opacity:1; transform:none; }
-    .pulse path{ animation:none !important; stroke-dashoffset:0 !important; }
-  }
-</style>
-</head>
-<body>
+      .save-btn {
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        background: linear-gradient(155deg, var(--teal), var(--teal-deep));
+        color: #fff;
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 0.96rem;
+        padding: 0.85rem 1rem;
+        cursor: pointer;
+        box-shadow:
+          0 10px 18px -12px rgba(11, 78, 74, 0.55),
+          0 2px 4px rgba(11, 78, 74, 0.25);
+        transition:
+          background 0.15s ease,
+          box-shadow 0.15s ease,
+          transform 0.1s ease;
+        opacity: 0;
+        animation: revealUp 0.5s ease-out forwards;
+        animation-delay: 1.14s;
+      }
+      .save-btn:hover {
+        background: linear-gradient(155deg, var(--teal-deep), #082f2c);
+        box-shadow:
+          0 14px 24px -12px rgba(11, 78, 74, 0.6),
+          0 3px 6px rgba(11, 78, 74, 0.3);
+      }
+      .save-btn:active {
+        transform: scale(0.97);
+        box-shadow:
+          0 4px 10px -6px rgba(11, 78, 74, 0.5),
+          0 1px 2px rgba(11, 78, 74, 0.3);
+      }
+      .save-btn:focus-visible {
+        outline: 2px solid var(--teal-deep);
+        outline-offset: 3px;
+      }
 
-<main class="card">
-  <button class="lang-toggle" id="langToggle" type="button">EN</button>
+      @media (min-width: 640px) {
+        .card {
+          max-width: 420px;
+          padding: 2.3rem 2.1rem 2.1rem;
+        }
+      }
 
-  <div class="seal" aria-hidden="true">
-    <svg viewBox="0 0 64 64">
-      <circle cx="32" cy="32" r="27" fill="none" stroke="#0F6B66" stroke-width="1.6"/>
-      <line x1="32" y1="3" x2="32" y2="9" stroke="#0F6B66" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
-    <span class="seal-mono" id="sealMono">СМ</span>
-  </div>
+      @media (prefers-reduced-motion: reduce) {
+        .card {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+        .seal,
+        h1.name,
+        .role,
+        .org,
+        .pulse,
+        .contact li,
+        .save-btn {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .pulse path {
+          animation: none !important;
+          stroke-dashoffset: 0 !important;
+        }
+        .pulse-dot {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <button class="lang-toggle" id="langToggle" type="button">EN</button>
 
-  <h1 class="name"><span id="nameLine1">Салохиддин</span><br><span id="nameLine2">Мухитдинов</span></h1>
-  <p class="role" id="roleText">Председатель</p>
-  <p class="org" id="orgText">Ассоциация Медицинских Организаций</p>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <circle
+            cx="32"
+            cy="32"
+            r="27"
+            fill="none"
+            stroke="#0F6B66"
+            stroke-width="1.6"
+          />
+          <line
+            x1="32"
+            y1="3"
+            x2="32"
+            y2="9"
+            stroke="#0F6B66"
+            stroke-width="1.6"
+            stroke-linecap="round"
+          />
+        </svg>
+        <span class="seal-mono" id="sealMono">СМ</span>
+      </div>
 
-  <div class="pulse" aria-hidden="true">
-    <svg viewBox="0 0 320 48" preserveAspectRatio="none">
-      <path pathLength="1" d="M0,24 H60 L68,24 L76,6 L84,42 L92,14 L100,24 H180 L188,24 L196,6 L204,42 L212,14 L220,24 H320"/>
-    </svg>
-  </div>
+      <h1 class="name">
+        <span id="nameLine1">Салохиддин</span><br /><span id="nameLine2"
+          >Мухитдинов</span
+        >
+      </h1>
+      <p class="role" id="roleText">Председатель</p>
+      <p class="org" id="orgText">Ассоциация Медицинских Организаций</p>
 
-  <ul class="contact">
-    <li>
-      <a href="tel:+998 90 927 90 07" id="phoneLink" aria-label="Позвонить: +998 90 927 90 07">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>+998 90 927 90 07</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://t.me/UZ_TTA" id="telegramLink" target="_blank" rel="noopener" aria-label="Telegram: @UZ_TTA">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3 11.2l6.2 2.2M21 4l-3.4 16-7.4-6.6M21 4 9.8 14.6m0 0-.6 5 3-3.2"/></svg>
-        <span>@UZ_TTA</span>
-      </a>
-    </li>
-    <li>
-      <a href="mailto:s_muhitdinov@mail.ru" id="emailLink" aria-label="Написать на почту: s_muhitdinov@mail.ru">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
-        <span>s_muhitdinov@mail.ru</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://uztta.uz" id="websiteLink" target="_blank" rel="noopener" aria-label="Перейти на сайт: uztta.uz">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
-        <span>uztta.uz</span>
-      </a>
-    </li>
-  </ul>
+      <div class="pulse" aria-hidden="true">
+        <svg viewBox="0 0 320 48" preserveAspectRatio="none">
+          <path
+            pathLength="1"
+            d="M0,24 H60 L68,24 L76,6 L84,42 L92,14 L100,24 H180 L188,24 L196,6 L204,42 L212,14 L220,24 H320"
+          />
+          <circle class="pulse-dot" r="3.2">
+            <animateMotion
+              dur="2.4s"
+              begin="2.05s"
+              repeatCount="indefinite"
+              path="M0,24 H60 L68,24 L76,6 L84,42 L92,14 L100,24 H180 L188,24 L196,6 L204,42 L212,14 L220,24 H320"
+            />
+          </circle>
+        </svg>
+      </div>
 
-  <button class="save-btn" id="saveContact" type="button">Сохранить контакт</button>
-</main>
+      <ul class="contact">
+        <li>
+          <a href="tel:+998 90 927 90 07" id="phoneLink" aria-label="Позвонить: +998 90 927 90 07">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            <span>+998 90 927 90 07</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://t.me/UZ_TTA"
+            id="telegramLink"
+            target="_blank"
+            rel="noopener"
+            aria-label="Telegram: @UZ_TTA"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 4 3 11.2l6.2 2.2M21 4l-3.4 16-7.4-6.6M21 4 9.8 14.6m0 0-.6 5 3-3.2"
+              />
+            </svg>
+            <span>@UZ_TTA</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:s_muhitdinov@mail.ru"
+            id="emailLink"
+            aria-label="Написать на почту: s_muhitdinov@mail.ru"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 4h16v16H4z" />
+              <path d="m4 6 8 7 8-7" />
+            </svg>
+            <span>s_muhitdinov@mail.ru</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://uztta.uz"
+            id="websiteLink"
+            target="_blank"
+            rel="noopener"
+            aria-label="Перейти на сайт: uztta.uz"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path
+                d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"
+              />
+            </svg>
+            <span>uztta.uz</span>
+          </a>
+        </li>
+      </ul>
 
-<script>
-  var translations = {
-    ru: {
-      htmlLang: 'ru',
-      title: 'Салохиддин Мухитдинов — Председатель, Ассоциация Медицинских Организаций',
-      description: 'Салохиддин Мухитдинов, Председатель, Ассоциация Медицинских Организаций. Контактная карточка.',
-      mono: 'СМ',
-      name: ['Салохиддин', 'Мухитдинов'],
-      role: 'Председатель',
-      org: 'Ассоциация Медицинских Организаций',
-      phoneLabel: 'Позвонить: +998 90 927 90 07',
-      telegramLabel: 'Telegram: @UZ_TTA',
-      emailLabel: 'Написать на почту: s_muhitdinov@mail.ru',
-      websiteLabel: 'Перейти на сайт: uztta.uz',
-      saveBtn: 'Сохранить контакт',
-      toggleText: 'EN',
-      toggleAria: 'Switch to English',
-      vcardFN: 'Салохиддин Мухитдинов',
-      vcardN: 'Мухитдинов;Салохиддин;;;'
-    },
-    en: {
-      htmlLang: 'en',
-      title: 'Salohiddin Muhitdinov — Chairman, Association of Medical Organizations',
-      description: 'Salohiddin Muhitdinov, Chairman, Association of Medical Organizations. Contact card.',
-      mono: 'SM',
-      name: ['Salohiddin', 'Muhitdinov'],
-      role: 'Chairman',
-      org: 'Association of Medical Organizations',
-      phoneLabel: 'Call +998 90 927 90 07',
-      telegramLabel: 'Telegram: @UZ_TTA',
-      emailLabel: 'Email s_muhitdinov@mail.ru',
-      websiteLabel: 'Visit uztta.uz',
-      saveBtn: 'Save contact',
-      toggleText: 'RU',
-      toggleAria: 'Переключить на русский',
-      vcardFN: 'Salohiddin Muhitdinov',
-      vcardN: 'Muhitdinov;Salohiddin;;;'
-    }
-  };
+      <button class="save-btn" id="saveContact" type="button">
+        Сохранить контакт
+      </button>
+    </main>
 
-  var currentLang = 'ru';
+    <script>
+      var translations = {
+        ru: {
+          htmlLang: "ru",
+          title:
+            "Салохиддин Мухитдинов — Председатель, Ассоциация Медицинских Организаций",
+          description:
+            "Салохиддин Мухитдинов, Председатель, Ассоциация Медицинских Организаций. Контактная карточка.",
+          mono: "СМ",
+          name: ["Салохиддин", "Мухитдинов"],
+          role: "Председатель",
+          org: "Ассоциация Медицинских Организаций",
+          phoneLabel: "Позвонить: +998 90 927 90 07",
+          telegramLabel: "Telegram: @UZ_TTA",
+          emailLabel: "Написать на почту: s_muhitdinov@mail.ru",
+          websiteLabel: "Перейти на сайт: uztta.uz",
+          saveBtn: "Сохранить контакт",
+          toggleText: "EN",
+          toggleAria: "Switch to English",
+          vcardFN: "Салохиддин Мухитдинов",
+          vcardN: "Мухитдинов;Салохиддин;;;",
+        },
+        en: {
+          htmlLang: "en",
+          title:
+            "Salohiddin Muhitdinov — Chairman, Association of Medical Organizations",
+          description:
+            "Salohiddin Muhitdinov, Chairman, Association of Medical Organizations. Contact card.",
+          mono: "SM",
+          name: ["Salohiddin", "Muhitdinov"],
+          role: "Chairman",
+          org: "Association of Medical Organizations",
+          phoneLabel: "Call +998 90 927 90 07",
+          telegramLabel: "Telegram: @UZ_TTA",
+          emailLabel: "Email s_muhitdinov@mail.ru",
+          websiteLabel: "Visit uztta.uz",
+          saveBtn: "Save contact",
+          toggleText: "RU",
+          toggleAria: "Переключить на русский",
+          vcardFN: "Salohiddin Muhitdinov",
+          vcardN: "Muhitdinov;Salohiddin;;;",
+        },
+      };
 
-  function applyLanguage(lang){
-    var t = translations[lang];
-    document.documentElement.lang = t.htmlLang;
-    document.title = t.title;
-    document.querySelector('meta[name="description"]').setAttribute('content', t.description);
-    document.getElementById('sealMono').textContent = t.mono;
-    document.getElementById('nameLine1').textContent = t.name[0];
-    document.getElementById('nameLine2').textContent = t.name[1];
-    document.getElementById('roleText').textContent = t.role;
-    document.getElementById('orgText').textContent = t.org;
-    document.getElementById('phoneLink').setAttribute('aria-label', t.phoneLabel);
-    document.getElementById('telegramLink').setAttribute('aria-label', t.telegramLabel);
-    document.getElementById('emailLink').setAttribute('aria-label', t.emailLabel);
-    document.getElementById('websiteLink').setAttribute('aria-label', t.websiteLabel);
-    document.getElementById('saveContact').textContent = t.saveBtn;
-    var toggle = document.getElementById('langToggle');
-    toggle.textContent = t.toggleText;
-    toggle.setAttribute('aria-label', t.toggleAria);
-    currentLang = lang;
-  }
+      var currentLang = "ru";
 
-  document.getElementById('langToggle').addEventListener('click', function(){
-    applyLanguage(currentLang === 'ru' ? 'en' : 'ru');
-  });
+      function applyLanguage(lang) {
+        var t = translations[lang];
+        document.documentElement.lang = t.htmlLang;
+        document.title = t.title;
+        document
+          .querySelector('meta[name="description"]')
+          .setAttribute("content", t.description);
+        document.getElementById("sealMono").textContent = t.mono;
+        document.getElementById("nameLine1").textContent = t.name[0];
+        document.getElementById("nameLine2").textContent = t.name[1];
+        document.getElementById("roleText").textContent = t.role;
+        document.getElementById("orgText").textContent = t.org;
+        document
+          .getElementById("phoneLink")
+          .setAttribute("aria-label", t.phoneLabel);
+        document
+          .getElementById("telegramLink")
+          .setAttribute("aria-label", t.telegramLabel);
+        document
+          .getElementById("emailLink")
+          .setAttribute("aria-label", t.emailLabel);
+        document
+          .getElementById("websiteLink")
+          .setAttribute("aria-label", t.websiteLabel);
+        document.getElementById("saveContact").textContent = t.saveBtn;
+        var toggle = document.getElementById("langToggle");
+        toggle.textContent = t.toggleText;
+        toggle.setAttribute("aria-label", t.toggleAria);
+        currentLang = lang;
+      }
 
-  applyLanguage(currentLang);
+      document
+        .getElementById("langToggle")
+        .addEventListener("click", function () {
+          applyLanguage(currentLang === "ru" ? "en" : "ru");
+        });
 
-  document.getElementById('saveContact').addEventListener('click', function(){
-    var t = translations[currentLang];
-    var lines = [
-      'BEGIN:VCARD',
-      'VERSION:3.0',
-      'N:' + t.vcardN,
-      'FN:' + t.vcardFN,
-      'ORG:' + t.org,
-      'TITLE:' + t.role,
-      'TEL;TYPE=WORK,VOICE:+998 90 927 90 07',
-      'EMAIL:s_muhitdinov@mail.ru',
-      'URL;TYPE=WORK:https://uztta.uz',
-      'URL;TYPE=Telegram:https://t.me/UZ_TTA',
-      'END:VCARD'
-    ];
-    var blob = new Blob([lines.join('\r\n')], { type: 'text/vcard;charset=utf-8' });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = 'Salohiddin_Muhitdinov.vcf';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
-</script>
+      applyLanguage(currentLang);
 
-</body>
+      document
+        .getElementById("saveContact")
+        .addEventListener("click", function () {
+          var t = translations[currentLang];
+          var lines = [
+            "BEGIN:VCARD",
+            "VERSION:3.0",
+            "N:" + t.vcardN,
+            "FN:" + t.vcardFN,
+            "ORG:" + t.org,
+            "TITLE:" + t.role,
+            "TEL;TYPE=WORK,VOICE:+998 90 927 90 07",
+            "EMAIL:s_muhitdinov@mail.ru",
+            "URL;TYPE=WORK:https://uztta.uz",
+            "URL;TYPE=Telegram:https://t.me/UZ_TTA",
+            "END:VCARD",
+          ];
+          var blob = new Blob([lines.join("\r\n")], {
+            type: "text/vcard;charset=utf-8",
+          });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement("a");
+          a.href = url;
+          a.download = "Salohiddin_Muhitdinov.vcf";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+    </script>
+  </body>
 </html>
